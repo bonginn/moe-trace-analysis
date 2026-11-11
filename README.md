@@ -19,6 +19,25 @@ pip install -e .                 # analysis only (torch, numpy)
 pip install -e ".[collect]"      # + trace collection (transformers, accelerate, safetensors)
 ```
 
+## Prompt set
+
+`scripts/build_prompts.py` builds a reproducible multi-domain prompt set (1714 prompts) from public HF datasets:
+- math: MATH-500, GSM8K;
+- code: MBPP, HumanEval;
+- English chat: UltraChat, OpenOrca;
+- Chinese: alpaca-zh.
+
+Math and code prompts are flagged `thinking: true`. `scripts/subset_96.txt` lists the ids of a 96-prompt subset
+(19 GSM8K, 16 MATH-500, 17 MBPP, 7 HumanEval, 19 UltraChat, 11 OpenOrca, 7 alpaca-zh).
+
+```bash
+pip install datasets
+python scripts/build_prompts.py --out prompts.jsonl                                    # all 1714
+python scripts/build_prompts.py --out prompts_96.jsonl --subset scripts/subset_96.txt   # the 96-prompt subset
+```
+
+The prompts themselves are not redistributed here: each source dataset keeps its own license.
+
 ## Quick start
 
 ```bash

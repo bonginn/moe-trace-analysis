@@ -14,6 +14,7 @@ dependencies = ["torch", "numpy"]
 
 [project.optional-dependencies]
 collect = ["transformers>=4.45", "accelerate", "huggingface_hub", "safetensors"]
+prompts = ["datasets"]
 
 [project.scripts]
 moe-trace = "moe_trace.__main__:main"
