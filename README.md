@@ -36,7 +36,9 @@ python scripts/build_prompts.py --out prompts.jsonl                             
 python scripts/build_prompts.py --out prompts_96.jsonl --subset scripts/subset_96.txt   # the 96-prompt subset
 ```
 
-The prompts themselves are not redistributed here: each source dataset keeps its own license.
+The 96-prompt subset is also included as `data/prompts_96.jsonl`, so collection works offline. Each prompt keeps
+its source dataset's license (MIT or CC BY 4.0); see `data/README.md` for sources, licenses and the changes made.
+`build_prompts.py` streams from the HF Hub, so it needs network access.
 
 ## Quick start
 

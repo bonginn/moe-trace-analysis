@@ -7,7 +7,8 @@ Math and code prompts are marked ``thinking: true`` (reasoning-mode generation),
     python scripts/build_prompts.py --out prompts.jsonl                                   # all 1714
     python scripts/build_prompts.py --out prompts_96.jsonl --subset scripts/subset_96.txt  # the 96-sequence set
 
-Each source dataset keeps its own license; this script only downloads and formats them.
+Needs network access (datasets are streamed from the HF Hub). Each source dataset keeps its own license
+(see data/README.md); the 96-prompt subset is also shipped as data/prompts_96.jsonl.
 """
 import argparse
 import json
