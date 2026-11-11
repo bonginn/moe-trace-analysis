@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "moe-trace-analysis"
+version = "0.1.0"
+description = "Record and analyze expert routing of HuggingFace MoE models: cross-layer prediction recall, locality, and expert-cache hit-rate simulation"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.10"
+dependencies = ["torch", "numpy"]
+
+[project.optional-dependencies]
+collect = ["transformers>=4.45", "accelerate", "huggingface_hub", "safetensors"]
+
+[project.scripts]
+moe-trace = "moe_trace.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["moe_trace*"]
